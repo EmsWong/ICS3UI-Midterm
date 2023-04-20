@@ -1,6 +1,6 @@
 //Escape The Villain's Lair
 //Emily Wong
-//v#3
+//v#4
 
 import arc.*;
 import java.awt.image.BufferedImage;
@@ -224,7 +224,8 @@ public class midtermproject{
 						if(strPunch.equalsIgnoreCase("yes")){
 							
 							//Punching the wall
-							dblPunch = (double)(Math.random()*500.0+500.0);
+							dblPunch = Math.round((double)(Math.random()*49999.99+50000.00));
+							dblPunch = dblPunch/100;
 							con.println(dblPunch);
 							con.sleep(100);
 							
@@ -245,6 +246,7 @@ public class midtermproject{
 								con.println("TEMP - Scene 14");
 								con.println("The punch was really strong!");
 								con.println("You crawl through and reach a fork");
+								con.println("Do you take the 'l'eft or 'r'ight way");
 								charDirection = con.getChar();
 							
 								if(charDirection == 'l'){
