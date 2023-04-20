@@ -1,3 +1,7 @@
+//Escape The Villain's Lair
+//Emily Wong
+//v#2
+
 import arc.*;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
@@ -5,26 +9,177 @@ import java.awt.Color;
 public class midtermproject{
 	public static void main(String[] args){
 		Console con = new Console("Escape The Villian's Lair", 1280, 720);
+		String strName;
+		char charInitial;
+		char charLowerCase;
+		String strPower;
+		String strUrge;
+		int intUrge;
+		double dblsideA;
+		double dblsideB;
+		double dblsideC;
+		double dblSemiP;
+		double dblArea;
+		char charDirection;
+		String strLook;
 		
 		//Initial Setting
 		scene1(con);
 		
 		//Hero Name Path Decision
-		String strName;
-		char charInitial;
-		char charLowerCase;
-		
 		con.println("What is your hero name?");
 		strName = con.readLine();
 		charInitial = strName.charAt(0);
 		charLowerCase = Character.toLowerCase(charInitial);
 		if(charLowerCase >= 'a' && charLowerCase <= 'm'){
 			//Telekinesis Power
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.clear();
+			
 			con.println("TEMP - Scene 2");
+			con.println("Without touch or force,");
+			con.println("I can move things with ease.");
+			con.println("Objects fly through the air,");
+			con.println("Without any breeze.");
+			con.println("What am I, this ability of the mind?");
+			strPower = con.readLine();
+			con.repaint();
+			
+			
+			if(strPower.equalsIgnoreCase("telekinesis")){
+				//Gaining telekinesis power
+				
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.clear();
+				
+				con.println("TEMP - Scene 5");
+				con.println("Something feels weird... There's this urge.");
+				con.println("Do you give into the urge?");
+				strUrge = con.readLine();
+				con.repaint();
+				
+				if(strUrge.equalsIgnoreCase("yes")){
+					//Giving into urge
+					intUrge = (int)(Math.random()*100);
+					con.println(intUrge);
+					
+					if(intUrge >= 51){
+						//Urge strong enough
+						con.setDrawColor(Color.BLACK);
+						con.fillRect(0, 0, 1280, 720);
+						con.clear();
+						
+						con.println("TEMP - Scene 9");
+						con.println("Another door... Enter 3 numbers for a triangle check");
+						con.println("Number 1:");
+						dblsideA = con.readDouble();
+						con.println("Number 2:");
+						dblsideB = con.readDouble();
+						con.println("Number 3:");
+						dblsideC = con.readDouble();	
+						dblSemiP = (dblsideA + dblsideB + dblsideC)/2;
+						
+						if((dblsideA < dblSemiP) && (dblsideB < dblSemiP) && (dblsideC < dblSemiP)){
+							//Password for door
+							dblArea = Math.sqrt(dblSemiP*(dblSemiP-dblsideA)*(dblSemiP-dblsideB)*(dblSemiP-dblsideC));
+							con.println("It's a triangle with area: "+dblArea);
+							con.println("TEMP - Scene 15");
+							con.println("There's a fork in the road!");
+							con.println("Do you take the 'l'eft or 'r'ight way");
+							charDirection = con.getChar();
+							
+							if(charDirection == 'l'){
+								con.println("TEMP - Scene 17");
+							}else if(charDirection == 'r'){
+								con.println("TEMP - Scene 16");
+							}
+							
+							
+						}else{
+							//Incorrect password
+							con.println("TEMP - Scene 12");
+						}
+						
+					}else{
+						//Urge not strong enough
+						con.setDrawColor(Color.BLACK);
+						con.fillRect(0, 0, 1280, 720);
+						con.clear();
+						con.println("TEMP - Scene 7");
+					}
+					
+				}else if(strUrge.equalsIgnoreCase("no")){
+					//Not giving into urge
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.clear();
+					
+					con.println("TEMP - Scene 7");
+				}
+				
+			}else{
+				//No powers
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.clear();
+				
+				con.println("TEMP - Scene 4");
+			}
 			
 		}else{
 			//X-Ray Power
+			
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.clear();
+			
 			con.println("TEMP - Scene 3");
+			con.println("I can see through walls,");
+			con.println("But I'm not a ghost.");
+			con.println("I can spot your bones,");
+			con.println("But I'm no doctor or host.");
+			con.println("What am I, you may ask with precision?");
+			strPower = con.readLine();
+			con.repaint();
+			
+			if(strPower.equalsIgnoreCase("x-ray vision")){
+				//Gaining x-ray power
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.clear();
+				
+				con.println("TEMP - Scene 6");
+				con.println("Something feels weird... What's this blurry thing on the wall?");
+				con.println("Do you take a closer look?");
+				strLook = con.readLine();
+				
+				if(strLook.equalsIgnoreCase("yes")){
+					//Looking closer at wall
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.clear();
+					
+					con.println("TEMP - Scene 8");
+					
+				}else if(strLook.equalsIgnoreCase("no")){
+					//Not looking closer
+					con.setDrawColor(Color.BLACK);
+					con.fillRect(0, 0, 1280, 720);
+					con.clear();
+					
+					con.println("TEMP - Scene 10");
+				}
+				
+			}else{
+				//No powers
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				con.clear();
+				
+				con.println("TEMP - Scene 4");
+			}
 		}
 	}
 	public static void scene1(Console con){
