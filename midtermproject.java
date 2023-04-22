@@ -126,7 +126,7 @@ public class midtermproject{
 			
 		}else{
 			//X-Ray Power
-			con.println("TEMP - Scene 3");
+			scene3(con);
 			con.println("I can see through walls,");
 			con.println("But I'm not a ghost.");
 			con.println("I can spot your bones,");
@@ -261,9 +261,37 @@ public class midtermproject{
 		}	
 	}
 	public static void scene3(Console con){
+		int intXGlow;
+		int intYGlow;
+		int intWidthGlow;
+		int intHeightGlow;
+		int intCount;
+		intXGlow = 390;
+		intYGlow = 390;
+		intWidthGlow = 205;
+		intHeightGlow = 205;
+		
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		
+		for(intCount = 50; intCount >= 1; intCount--){
+			BufferedImage imgBackground = con.loadImage("background.jpg");
+			con.drawImage(imgBackground, 0, 0);
+			BufferedImage imgScene3 = con.loadImage("scene3.png");
+			con.drawImage(imgScene3, 390, 390);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("Look a glowing orb!", 650, 450);
+			con.drawString("It has a riddle", 650, 470);
+			
+			con.setDrawColor(new Color(0, 0, 205));
+			con.drawOval(intXGlow, intYGlow, intWidthGlow, intHeightGlow);
+			intXGlow = intXGlow - 1;
+			intYGlow = intYGlow - 1;
+			intWidthGlow = intWidthGlow + 2;
+			intHeightGlow = intHeightGlow + 2;
+			con.repaint();
+		}	
 	}
 	public static void scene4(Console con){
 		con.setDrawColor(Color.BLACK);
