@@ -1,6 +1,6 @@
 //Escape The Villain's Lair
 //Emily Wong
-//v#4
+//v#5
 
 import arc.*;
 import java.awt.image.BufferedImage;
@@ -37,11 +37,7 @@ public class midtermproject{
 		charLowerCase = Character.toLowerCase(charInitial);
 		if(charLowerCase >= 'a' && charLowerCase <= 'm'){
 			//Telekinesis Power
-			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 0, 1280, 720);
-			con.clear();
-			
-			con.println("TEMP - Scene 2");
+			scene2(con);
 			con.println("Without touch or force,");
 			con.println("I can move things with ease.");
 			con.println("Objects fly through the air,");
@@ -53,11 +49,6 @@ public class midtermproject{
 			
 			if(strPower.equalsIgnoreCase("telekinesis")){
 				//Gaining telekinesis power
-				
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0, 0, 1280, 720);
-				con.clear();
-				
 				con.println("TEMP - Scene 5");
 				con.println("Something feels weird... There's this urge.");
 				con.println("Do you give into the urge?");
@@ -66,16 +57,13 @@ public class midtermproject{
 				
 				if(strUrge.equalsIgnoreCase("yes")){
 					//Giving into urge
-					intUrge = (int)(Math.random()*100);
-					con.println(intUrge);
-					con.sleep(100);
+					//Changed from random number to input (different from flowchart)
+					//Talked about change in class and it's okay
+					con.println("Enter a number 1 - 100:");
+					intUrge = con.readInt();
 					
 					if(intUrge >= 51){
 						//Urge strong enough
-						con.setDrawColor(Color.BLACK);
-						con.fillRect(0, 0, 1280, 720);
-						con.clear();
-						
 						con.println("TEMP - Scene 9");
 						con.println("Another door... Enter 3 numbers for a triangle check");
 						con.println("Number 1:");
@@ -88,10 +76,6 @@ public class midtermproject{
 						
 						if((dblsideA < dblSemiP) && (dblsideB < dblSemiP) && (dblsideC < dblSemiP)){
 							//Password for door
-							con.setDrawColor(Color.BLACK);
-							con.fillRect(0, 0, 1280, 720);
-							con.clear();
-							
 							dblArea = Math.sqrt(dblSemiP*(dblSemiP-dblsideA)*(dblSemiP-dblsideB)*(dblSemiP-dblsideC));
 							con.println("It's a triangle with area: "+dblArea);
 							con.println("TEMP - Scene 15");
@@ -101,10 +85,6 @@ public class midtermproject{
 							
 							if(charDirection == 'l'){
 								//Run into villain
-								con.setDrawColor(Color.BLACK);
-								con.fillRect(0, 0, 1280, 720);
-								con.clear();
-			
 								con.println("TEMP - Scene 17");
 								con.println("You ran into SHADOW WEAVER!!");
 								con.println("Do you fight?");
@@ -112,72 +92,40 @@ public class midtermproject{
 								
 								if(strFight.equalsIgnoreCase("no")){
 									//Run away
-									con.setDrawColor(Color.BLACK);
-									con.fillRect(0, 0, 1280, 720);
-									con.clear();
-									
 									con.println("TEMP - Scene 18");
 									
 								}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("telekinesis")){
 									//Telekinesis powers
-									con.setDrawColor(Color.BLACK);
-									con.fillRect(0, 0, 1280, 720);
-									con.clear();
-									
 									con.println("TEMP - Scene 19");
 								}
 								
 							}else if(charDirection == 'r'){
-								con.setDrawColor(Color.BLACK);
-								con.fillRect(0, 0, 1280, 720);
-								con.clear();
-								
+								//Escape
 								con.println("TEMP - Scene 16");
 							}
 							
-							
 						}else{
 							//Incorrect password
-							con.setDrawColor(Color.BLACK);
-							con.fillRect(0, 0, 1280, 720);
-							con.clear();
 							con.println("TEMP - Scene 12");
 						}
 						
 					}else{
 						//Urge not strong enough
-						con.setDrawColor(Color.BLACK);
-						con.fillRect(0, 0, 1280, 720);
-						con.clear();
-						
 						con.println("TEMP - Scene 7");
 					}
 					
 				}else if(strUrge.equalsIgnoreCase("no")){
 					//Not giving into urge
-					con.setDrawColor(Color.BLACK);
-					con.fillRect(0, 0, 1280, 720);
-					con.clear();
-					
 					con.println("TEMP - Scene 7");
 				}
 				
 			}else{
 				//No powers
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0, 0, 1280, 720);
-				con.clear();
-				
 				con.println("TEMP - Scene 4");
 			}
 			
 		}else{
 			//X-Ray Power
-			
-			con.setDrawColor(Color.BLACK);
-			con.fillRect(0, 0, 1280, 720);
-			con.clear();
-			
 			con.println("TEMP - Scene 3");
 			con.println("I can see through walls,");
 			con.println("But I'm not a ghost.");
@@ -189,10 +137,6 @@ public class midtermproject{
 			
 			if(strPower.equalsIgnoreCase("x-ray vision")){
 				//Gaining x-ray power
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0, 0, 1280, 720);
-				con.clear();
-				
 				con.println("TEMP - Scene 6");
 				con.println("Something feels weird... What's this blurry thing on the wall?");
 				con.println("Do you take a closer look?");
@@ -200,10 +144,6 @@ public class midtermproject{
 				
 				if(strLook.equalsIgnoreCase("yes")){
 					//Looking closer at wall
-					con.setDrawColor(Color.BLACK);
-					con.fillRect(0, 0, 1280, 720);
-					con.clear();
-					
 					con.println("TEMP - Scene 8");
 					con.println("There's a puzzle on the wall");
 					con.println("Solve the puzzle!");
@@ -211,10 +151,6 @@ public class midtermproject{
 					
 					if(intPuzzle == 394){
 						//Another door and puzzle
-						con.setDrawColor(Color.BLACK);
-						con.fillRect(0, 0, 1280, 720);
-						con.clear();
-						
 						con.println("TEMP - Scene 11");
 						con.println("That door needs fingerprint ID to get throguh!");
 						con.println("Using x-ray vision there seems to be a hollow part in the wall");
@@ -231,18 +167,10 @@ public class midtermproject{
 							
 							if(dblPunch <= 749.99){
 								//Guard hears the noise
-								con.setDrawColor(Color.BLACK);
-								con.fillRect(0, 0, 1280, 720);
-								con.clear();
-								
 								con.println("TEMP - Scene 13");
 								
 							}else{
 								//Strong punch
-								con.setDrawColor(Color.BLACK);
-								con.fillRect(0, 0, 1280, 720);
-								con.clear();
-								
 								con.println("TEMP - Scene 14");
 								con.println("The punch was really strong!");
 								con.println("You crawl through and reach a fork");
@@ -251,10 +179,6 @@ public class midtermproject{
 							
 								if(charDirection == 'l'){
 									//Run into villain
-									con.setDrawColor(Color.BLACK);
-									con.fillRect(0, 0, 1280, 720);
-									con.clear();
-			
 									con.println("TEMP - Scene 17");
 									con.println("You ran into SHADOW WEAVER!!");
 									con.println("Do you fight?");
@@ -262,73 +186,168 @@ public class midtermproject{
 								
 									if(strFight.equalsIgnoreCase("no")){
 										//Run away
-										con.setDrawColor(Color.BLACK);
-										con.fillRect(0, 0, 1280, 720);
-										con.clear();
-										
 										con.println("TEMP - Scene 18");
 										
 									}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("x-ray vision")){
 										//X-ray powers
-										con.setDrawColor(Color.BLACK);
-										con.fillRect(0, 0, 1280, 720);
-										con.clear();
-										
 										con.println("TEMP - Scene 19");
 									}
 								
 								}else if(charDirection == 'r'){
 									//Escape
-									con.setDrawColor(Color.BLACK);
-									con.fillRect(0, 0, 1280, 720);
-									con.clear();	
-									
 									con.println("TEMP - Scene 16");
 								}
 							}
 						}else if(strPunch.equalsIgnoreCase("no")){
 							//Taser
-							con.setDrawColor(Color.BLACK);
-							con.fillRect(0, 0, 1280, 720);
-							con.clear();
-							
 							con.println("TEMP - Scene 12");
 						}
 						
 					}else{
 						//Taser
-						con.setDrawColor(Color.BLACK);
-						con.fillRect(0, 0, 1280, 720);
-						con.clear();
-			
 						con.println("TEMP - Scene 12");
 					}
 					
 				}else if(strLook.equalsIgnoreCase("no")){
 					//Not looking closer
-					con.setDrawColor(Color.BLACK);
-					con.fillRect(0, 0, 1280, 720);
-					con.clear();
-					
 					con.println("TEMP - Scene 10");
 				}
 				
 			}else{
 				//No powers
-				con.setDrawColor(Color.BLACK);
-				con.fillRect(0, 0, 1280, 720);
-				con.clear();
-				
 				con.println("TEMP - Scene 4");
 			}
 		}
 	}
 	public static void scene1(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
 		BufferedImage imgScene1 = con.loadImage("scene1.jpg");
 		con.println("You've been trapped in The Shadow Weaver's lair and have to escape!");
 		con.drawImage(imgScene1, 0, 0);
 	}
 	public static void scene2(Console con){
+		int intXGlow;
+		int intYGlow;
+		int intWidthGlow;
+		int intHeightGlow;
+		int intCount;
+		intXGlow = 390;
+		intYGlow = 390;
+		intWidthGlow = 205;
+		intHeightGlow = 205;
 		
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+		
+		for(intCount = 50; intCount >= 1; intCount--){
+			BufferedImage imgBackground = con.loadImage("background.jpg");
+			con.drawImage(imgBackground, 0, 0);
+			BufferedImage imgScene2 = con.loadImage("scene2.png");
+			con.drawImage(imgScene2, 390, 390);
+			con.setDrawColor(Color.WHITE);
+			con.drawString("Look a glowing orb!", 650, 450);
+			con.drawString("It has a riddle", 650, 470);
+			
+			con.setDrawColor(new Color(0, 255, 255));
+			con.drawOval(intXGlow, intYGlow, intWidthGlow, intHeightGlow);
+			intXGlow = intXGlow - 1;
+			intYGlow = intYGlow - 1;
+			intWidthGlow = intWidthGlow + 2;
+			intHeightGlow = intHeightGlow + 2;
+			con.repaint();
+		}	
+	}
+	public static void scene3(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene4(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene5(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene6(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene7(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene8(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene9(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene10(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene11(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene12(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene13(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene14(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene15(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene16(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene17(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene18(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene19(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
+	}
+	public static void scene20(Console con){
+		con.setDrawColor(Color.BLACK);
+		con.fillRect(0, 0, 1280, 720);
+		con.clear();
 	}
 }
