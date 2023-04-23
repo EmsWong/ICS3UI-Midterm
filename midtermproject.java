@@ -1,6 +1,6 @@
 //Escape The Villain's Lair
 //Emily Wong
-//v#5
+//v#6
 
 import arc.*;
 import java.awt.image.BufferedImage;
@@ -121,7 +121,7 @@ public class midtermproject{
 				
 			}else{
 				//No powers
-				con.println("TEMP - Scene 4");
+				scene4(con);
 			}
 			
 		}else{
@@ -215,7 +215,7 @@ public class midtermproject{
 				
 			}else{
 				//No powers
-				con.println("TEMP - Scene 4");
+				scene4(con);
 			}
 		}
 	}
@@ -294,10 +294,33 @@ public class midtermproject{
 		}	
 	}
 	public static void scene4(Console con){
-		con.setDrawColor(Color.BLACK);
-		con.fillRect(0, 0, 1280, 720);
-		con.clear();
-	}
+		int intCount;
+		for(intCount = 3; intCount >= 0; intCount--){
+			con.setDrawColor(Color.BLACK);
+			con.fillRect(0, 0, 1280, 720);
+			con.clear();
+			BufferedImage imgBackground = con.loadImage("background.jpg");
+			con.drawImage(imgBackground, 0, 0);
+			BufferedImage imgScene4 = con.loadImage("scene4.png");
+			con.drawImage(imgScene4, 390, 390);
+			con.repaint();
+			con.setDrawColor(Color.WHITE);
+			con.drawString("Oh no!", 450, 355);
+			con.drawString("There's a self destruct timer!", 335, 375);
+			con.setDrawColor(Color.BLACK);
+			con.drawString("0:0"+intCount, 465, 470);
+			con.sleep(500);
+		}
+		BufferedImage imgExplosion = con.loadImage("explosion.jpg");
+		con.drawImage(imgExplosion, 0, 0);
+		con.repaint();
+		con.sleep(250);
+		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
+		con.drawImage(imgGameOver, 0, 0);
+		con.repaint();
+		con.sleep(1000);
+		con.closeConsole();
+	}	
 	public static void scene5(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
