@@ -1,6 +1,6 @@
 //Escape The Villain's Lair
 //Emily Wong
-//v#6
+//v#7
 
 import arc.*;
 import java.awt.image.BufferedImage;
@@ -64,7 +64,7 @@ public class midtermproject{
 					
 					if(intUrge >= 51){
 						//Urge strong enough
-						con.println("TEMP - Scene 9");
+						scene9(con);
 						con.println("Another door... Enter 3 numbers for a triangle check");
 						con.println("Number 1:");
 						dblsideA = con.readDouble();
@@ -78,45 +78,45 @@ public class midtermproject{
 							//Password for door
 							dblArea = Math.sqrt(dblSemiP*(dblSemiP-dblsideA)*(dblSemiP-dblsideB)*(dblSemiP-dblsideC));
 							con.println("It's a triangle with area: "+dblArea);
-							con.println("TEMP - Scene 15");
+							scene15(con);
 							con.println("There's a fork in the road!");
 							con.println("Do you take the 'l'eft or 'r'ight way");
 							charDirection = con.getChar();
 							
 							if(charDirection == 'l'){
 								//Run into villain
-								con.println("TEMP - Scene 17");
+								scene17(con);
 								con.println("You ran into SHADOW WEAVER!!");
 								con.println("Do you fight?");
 								strFight = con.readLine();
 								
 								if(strFight.equalsIgnoreCase("no")){
 									//Run away
-									con.println("TEMP - Scene 18");
+									scene18(con);
 									
 								}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("telekinesis")){
 									//Telekinesis powers
-									con.println("TEMP - Scene 19");
+									scene19(con);
 								}
 								
 							}else if(charDirection == 'r'){
 								//Escape
-								con.println("TEMP - Scene 16");
+								scene16(con);
 							}
 							
 						}else{
 							//Incorrect password
-							con.println("TEMP - Scene 12");
+							scene12(con);
 						}
 						
 					}else{
 						//Urge not strong enough
-						con.println("TEMP - Scene 7");
+						scene7(con);
 					}
 					
 				}else if(strUrge.equalsIgnoreCase("no")){
 					//Not giving into urge
-					con.println("TEMP - Scene 7");
+					scene7(con);
 				}
 				
 			}else{
@@ -151,7 +151,7 @@ public class midtermproject{
 					
 					if(intPuzzle == 394){
 						//Another door and puzzle
-						con.println("TEMP - Scene 11");
+						scene11(con);
 						con.println("That door needs fingerprint ID to get through!");
 						con.println("Using x-ray vision there seems to be a hollow part in the wall");
 						con.println("Do you punch the wall?");
@@ -167,11 +167,11 @@ public class midtermproject{
 							
 							if(dblPunch <= 749.99){
 								//Guard hears the noise
-								con.println("TEMP - Scene 13");
+								scene13(con);
 								
 							}else{
 								//Strong punch
-								con.println("TEMP - Scene 14");
+								scene14(con);
 								con.println("The punch was really strong!");
 								con.println("You crawl through and reach a fork");
 								con.println("Do you take the 'l'eft or 'r'ight way");
@@ -179,38 +179,38 @@ public class midtermproject{
 							
 								if(charDirection == 'l'){
 									//Run into villain
-									con.println("TEMP - Scene 17");
+									scene17(con);
 									con.println("You ran into SHADOW WEAVER!!");
 									con.println("Do you fight?");
 									strFight = con.readLine();
 								
 									if(strFight.equalsIgnoreCase("no")){
 										//Run away
-										con.println("TEMP - Scene 18");
+										scene18(con);
 										
 									}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("x-ray vision")){
 										//X-ray powers
-										con.println("TEMP - Scene 19");
+										scene19(con);
 									}
 								
 								}else if(charDirection == 'r'){
 									//Escape
-									con.println("TEMP - Scene 16");
+									scene16(con);
 								}
 							}
 						}else if(strPunch.equalsIgnoreCase("no")){
 							//Taser
-							con.println("TEMP - Scene 12");
+							scene12(con);
 						}
 						
 					}else{
 						//Taser
-						con.println("TEMP - Scene 12");
+						scene12(con);
 					}
 					
 				}else if(strLook.equalsIgnoreCase("no")){
 					//Not looking closer
-					con.println("TEMP - Scene 10");
+					scene10(con);
 				}
 				
 			}else{
@@ -339,8 +339,8 @@ public class midtermproject{
 		con.sleep(2000);
 		BufferedImage imgScene5Guard = con.loadImage("scene5guard.jpg");
 		con.drawImage(imgScene5Guard, 0, 0);
-		BufferedImage imgScene5Key = con.loadImage("scene5key.png");
-		con.drawImage(imgScene5Key, 530, 370);
+		BufferedImage imgKey = con.loadImage("key.png");
+		con.drawImage(imgKey, 530, 370);
 		con.repaint();
 	}
 	public static void scene6(Console con){
@@ -368,6 +368,28 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		con.setDrawColor(Color.WHITE);
+		con.println("The urge wasn't very strong.");
+		BufferedImage imgScene5Guard = con.loadImage("scene5guard.jpg");
+		con.drawImage(imgScene5Guard, 0, 0);
+		con.repaint();
+		con.sleep(1500);
+		con.clear();
+		BufferedImage imgScene7 = con.loadImage("scene7.jpg");
+		con.drawImage(imgScene7, 0, 0);
+		con.repaint();
+		con.println("Oh no! A fight broke out!");
+		con.sleep(3000);
+		con.clear();
+		BufferedImage imgBullet = con.loadImage("bullet.jpg");
+		con.drawImage(imgBullet, 0, 0);
+		con.repaint();
+		con.sleep(500);
+		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
+		con.drawImage(imgGameOver, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 	public static void scene8(Console con){
 		con.setDrawColor(Color.BLACK);
@@ -424,6 +446,12 @@ public class midtermproject{
 		BufferedImage imgScene16 = con.loadImage("scene16.jpg");
 		con.drawImage(imgScene16, 0, 0);
 		con.repaint();
+		con.sleep(750);
+		BufferedImage imgEscape = con.loadImage("escape.jpg");
+		con.drawImage(imgEscape, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 	public static void scene17(Console con){
 		con.setDrawColor(Color.BLACK);
