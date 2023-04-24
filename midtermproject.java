@@ -49,7 +49,7 @@ public class midtermproject{
 			
 			if(strPower.equalsIgnoreCase("telekinesis")){
 				//Gaining telekinesis power
-				con.println("TEMP - Scene 5");
+				scene5(con);
 				con.println("Something feels weird... There's this urge.");
 				con.println("Do you give into the urge?");
 				strUrge = con.readLine();
@@ -137,14 +137,14 @@ public class midtermproject{
 			
 			if(strPower.equalsIgnoreCase("x-ray vision")){
 				//Gaining x-ray power
-				con.println("TEMP - Scene 6");
+				scene6(con);
 				con.println("Something feels weird... What's this blurry thing on the wall?");
 				con.println("Do you take a closer look?");
 				strLook = con.readLine();
 				
 				if(strLook.equalsIgnoreCase("yes")){
 					//Looking closer at wall
-					con.println("TEMP - Scene 8");
+					scene8(con);
 					con.println("There's a puzzle on the wall");
 					con.println("Solve the puzzle!");
 					intPuzzle = con.readInt();
@@ -152,7 +152,7 @@ public class midtermproject{
 					if(intPuzzle == 394){
 						//Another door and puzzle
 						con.println("TEMP - Scene 11");
-						con.println("That door needs fingerprint ID to get throguh!");
+						con.println("That door needs fingerprint ID to get through!");
 						con.println("Using x-ray vision there seems to be a hollow part in the wall");
 						con.println("Do you punch the wall?");
 						strPunch = con.readLine();
@@ -325,11 +325,44 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgBackground = con.loadImage("background.jpg");
+		con.drawImage(imgBackground, 0, 0);
+		BufferedImage imgScene5 = con.loadImage("scene5.png");
+		con.drawImage(imgScene5, 550, 500);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		con.drawString("It opened!", 570, 300);
+		con.setDrawColor(new Color(0, 255, 255));
+		con.fillOval(620, 500, 10, 10);
+		con.fillOval(615, 430, 20, 20);
+		con.fillOval(607, 340, 40, 40);
+		con.sleep(2000);
+		BufferedImage imgScene5Guard = con.loadImage("scene5guard.jpg");
+		con.drawImage(imgScene5Guard, 0, 0);
+		BufferedImage imgScene5Key = con.loadImage("scene5key.png");
+		con.drawImage(imgScene5Key, 530, 370);
+		con.repaint();
 	}
 	public static void scene6(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgBackground = con.loadImage("background.jpg");
+		con.drawImage(imgBackground, 0, 0);
+		BufferedImage imgScene6 = con.loadImage("scene6.png");
+		con.drawImage(imgScene6, 550, 500);
+		con.repaint();
+		con.setDrawColor(Color.WHITE);
+		con.drawString("It opened!", 570, 300);
+		con.setDrawColor(new Color(0, 0, 205));
+		con.fillOval(620, 500, 10, 10);
+		con.fillOval(615, 430, 20, 20);
+		con.fillOval(607, 340, 40, 40);
+		con.sleep(2000);
+		BufferedImage imgWall = con.loadImage("scene6bg.jpg");
+		con.drawImage(imgWall, 0, 0);
+		BufferedImage imgBlurpuzzle = con.loadImage("blurpuzzle.png");
+		con.drawImage(imgBlurpuzzle, 480, 200);
 	}
 	public static void scene7(Console con){
 		con.setDrawColor(Color.BLACK);
@@ -340,6 +373,11 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgWall = con.loadImage("scene6bg.jpg");
+		con.drawImage(imgWall, 0, 0);
+		BufferedImage imgPuzzle = con.loadImage("puzzle.png");
+		con.drawImage(imgPuzzle, 400, 50);
+		con.repaint();
 	}
 	public static void scene9(Console con){
 		con.setDrawColor(Color.BLACK);
