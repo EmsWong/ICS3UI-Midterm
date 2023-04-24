@@ -413,11 +413,17 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgPathfork = con.loadImage("pathfork.jpg");
+		con.drawImage(imgPathfork, 0, 0);
+		con.repaint();
 	}
 	public static void scene16(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgScene16 = con.loadImage("scene16.jpg");
+		con.drawImage(imgScene16, 0, 0);
+		con.repaint();
 	}
 	public static void scene17(Console con){
 		con.setDrawColor(Color.BLACK);
