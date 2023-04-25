@@ -338,8 +338,8 @@ public class midtermproject{
 		con.fillOval(615, 430, 20, 20);
 		con.fillOval(607, 340, 40, 40);
 		con.sleep(2000);
-		BufferedImage imgScene5Guard = con.loadImage("scene5guard.jpg");
-		con.drawImage(imgScene5Guard, 0, 0);
+		BufferedImage imgGuard = con.loadImage("guard.jpg");
+		con.drawImage(imgGuard, 0, 0);
 		BufferedImage imgKey = con.loadImage("key.png");
 		con.drawImage(imgKey, 530, 370);
 		con.repaint();
@@ -403,9 +403,46 @@ public class midtermproject{
 		con.repaint();
 	}
 	public static void scene9(Console con){
+		int intCount;
+		int intKeyX;
+		int intKeyY;
+		intCount = 1;
+		intKeyX = 530;
+		intKeyY = 370;
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		while(intCount == 1){
+			BufferedImage imgGuard = con.loadImage("guard.jpg");
+			con.drawImage(imgGuard, 0, 0);
+			BufferedImage imgKey = con.loadImage("key.png");
+			con.drawImage(imgKey, intKeyX, intKeyY);
+			con.repaint();
+			con.sleep(33);
+			intKeyX = intKeyX - 10;
+			intKeyY = intKeyY + 10;
+			if(intKeyY == 570){
+				con.setDrawColor(Color.BLACK);
+				con.fillRect(0, 0, 1280, 720);
+				BufferedImage imgUnlock = con.loadImage("scene1.jpg");
+				con.drawImage(imgUnlock, 0, 0);
+				con.drawImage(imgKey, 530, 570);
+				con.repaint();
+				con.println("It's unlocked!");
+				con.sleep(2000);
+				BufferedImage imgHall = con.loadImage("hall.png");
+				con.drawImage(imgHall, 0, 0);
+				con.repaint();
+				con.setDrawColor(Color.WHITE);
+				con.println("Let's go to the door");
+				con.sleep(4000);
+				con.clear();
+				BufferedImage imgDoor = con.loadImage("door.png");
+				con.drawImage(imgDoor, 0, 0);
+				con.repaint();
+				intCount = intCount + 1;
+			}
+		}
 	}
 	public static void scene10(Console con){
 		con.setDrawColor(Color.BLACK);
