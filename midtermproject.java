@@ -5,6 +5,7 @@
 import arc.*;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
+import java.awt.Font;
 
 public class midtermproject{
 	public static void main(String[] args){
@@ -27,7 +28,7 @@ public class midtermproject{
 		String strPunch;
 		double dblPunch;
 		
-		//Initial Setting
+		//Initial Start
 		scene1(con);
 		
 		//Hero Name Path Decision
@@ -410,6 +411,21 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		con.setDrawColor(Color.WHITE);
+		con.println("The alarm went off!");
+		con.println("That's poison gas!");
+		BufferedImage imgHall = con.loadImage("hall.png");
+		con.drawImage(imgHall, 0, 0);
+		BufferedImage imgPoisongas = con.loadImage("poisongas.png");
+		con.drawImage(imgPoisongas, 0, 0);
+		con.repaint();
+		con.sleep(1500);
+		con.clear();
+		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
+		con.drawImage(imgGameOver, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 	public static void scene11(Console con){
 		con.setDrawColor(Color.BLACK);
