@@ -5,7 +5,6 @@
 import arc.*;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
-import java.awt.Font;
 
 public class midtermproject{
 	public static void main(String[] args){
@@ -37,8 +36,9 @@ public class midtermproject{
 		strName = con.readLine();
 		charInitial = strName.charAt(0);
 		charLowerCase = Character.toLowerCase(charInitial);
+		
+		//Telekinesis Power
 		if(charLowerCase >= 'a' && charLowerCase <= 'm'){
-			//Telekinesis Power
 			//Scene 2
 			scene2(con);
 			con.println("Without touch or force,");
@@ -49,9 +49,8 @@ public class midtermproject{
 			strPower = con.readLine();
 			con.repaint();
 			
-			
+			//Gaining telekinesis power
 			if(strPower.equalsIgnoreCase("telekinesis")){
-				//Gaining telekinesis power
 				//Scene 5
 				scene5(con);
 				con.println("Something feels weird... There's this urge.");
@@ -59,15 +58,15 @@ public class midtermproject{
 				strUrge = con.readLine();
 				con.repaint();
 				
+				//Giving into urge
 				if(strUrge.equalsIgnoreCase("yes")){
-					//Giving into urge
 					//Changed from random number to input (different from flowchart)
 					//Talked about change in class and it's okay
 					con.println("Enter a number 1 - 100:");
 					intUrge = con.readInt();
 					
+					//Urge strong enough
 					if(intUrge >= 51){
-						//Urge strong enough
 						//Scene 9
 						scene9(con);
 						con.println("Another door... Enter 3 numbers for a triangle check");
@@ -79,8 +78,8 @@ public class midtermproject{
 						dblsideC = con.readDouble();	
 						dblSemiP = (dblsideA + dblsideB + dblsideC)/2;
 						
+						//Password for door
 						if((dblsideA < dblSemiP) && (dblsideB < dblSemiP) && (dblsideC < dblSemiP)){
-							//Password for door
 							//Scene 15
 							dblArea = Math.sqrt(dblSemiP*(dblSemiP-dblsideA)*(dblSemiP-dblsideB)*(dblSemiP-dblsideC));
 							con.println("It's a triangle with area: "+dblArea);
@@ -90,57 +89,56 @@ public class midtermproject{
 							con.println("Do you take the 'l'eft or 'r'ight way");
 							charDirection = con.getChar();
 							
+							//Run into villain
 							if(charDirection == 'l'){
-								//Run into villain
 								//Scene 17
 								scene17(con);
 								con.println("You ran into SHADOW WEAVER!!");
 								con.println("Do you fight?");
 								strFight = con.readLine();
 								
+								//Run away
 								if(strFight.equalsIgnoreCase("no")){
-									//Run away
 									//Scene 18
 									scene18(con);
-									
+								
+								//Telekinesis powers
 								}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("telekinesis")){
-									//Telekinesis powers
 									//Scene 19 
 									scene19(con);
 								}
-								
+							
+							//Escape	
 							}else if(charDirection == 'r'){
-								//Escape
 								//Scene 16
 								scene16(con);
 							}
 							
+						//Incorrect door password
 						}else{
-							//Incorrect password
 							//Scene 12
 							scene12(con);
 						}
 						
+					//Urge not strong enough
 					}else{
-						//Urge not strong enough
 						//Scene 7
 						scene7(con);
 					}
-					
+				
+				//Not giving into urge
 				}else if(strUrge.equalsIgnoreCase("no")){
-					//Not giving into urge
 					//Scene 7
 					scene7(con);
 				}
-				
+			//No powers
 			}else{
-				//No powers
 				//Scene 4
 				scene4(con);
 			}
-			
+		
+		//X-Ray Power	
 		}else{
-			//X-Ray Power
 			//Scene 3
 			scene3(con);
 			con.println("I can see through walls,");
@@ -151,24 +149,24 @@ public class midtermproject{
 			strPower = con.readLine();
 			con.repaint();
 			
+			//Gaining x-ray power
 			if(strPower.equalsIgnoreCase("x-ray vision")){
-				//Gaining x-ray power
 				//Scene 6
 				scene6(con);
 				con.println("Something feels weird... What's this blurry thing on the wall?");
 				con.println("Do you take a closer look?");
 				strLook = con.readLine();
 				
+				//Looking closer at wall
 				if(strLook.equalsIgnoreCase("yes")){
-					//Looking closer at wall
 					//Scene 8
 					scene8(con);
 					con.println("There's a puzzle on the wall");
 					con.println("Solve the puzzle!");
 					intPuzzle = con.readInt();
 					
+					//Another door
 					if(intPuzzle == 394){
-						//Another door and puzzle
 						//Scene 11
 						scene11(con);
 						con.println("That door needs fingerprint ID to get through!");
@@ -176,19 +174,18 @@ public class midtermproject{
 						con.println("Do you punch the wall?");
 						strPunch = con.readLine();
 						
+						//Strength of punching the wall
 						if(strPunch.equalsIgnoreCase("yes")){
-							
-							//Strength of punching the wall
 							dblPunch = Math.round((double)(Math.random()*49999.99+50000.00));
 							dblPunch = dblPunch/100;
 							
+							//Guard hears the noise
 							if(dblPunch <= 749.99){
-								//Guard hears the noise
 								//Scene 13
 								scene13(con);
-								
+							
+							//Strong punch	
 							}else{
-								//Strong punch
 								//Scene 14
 								scene14(con);
 								con.println("The punch was really strong!");
@@ -196,51 +193,51 @@ public class midtermproject{
 								con.println("Do you take the 'l'eft or 'r'ight way");
 								charDirection = con.getChar();
 							
+								//Run into villain
 								if(charDirection == 'l'){
-									//Run into villain
 									//Scene 17
 									scene17(con);
 									con.println("You ran into SHADOW WEAVER!!");
 									con.println("Do you fight?");
 									strFight = con.readLine();
 								
+									//Run away
 									if(strFight.equalsIgnoreCase("no")){
-										//Run away
 										//Scene 18
 										scene18(con);
 										
+									//X-ray powers
 									}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("x-ray vision")){
-										//X-ray powers
 										//Scene 20
 										scene20(con);
 									}
-								
+									
+								//Escape
 								}else if(charDirection == 'r'){
-									//Escape
 									//Scene 16
 									scene16(con);
 								}
 							}
+						//Taser
 						}else if(strPunch.equalsIgnoreCase("no")){
-							//Taser
 							//Scene 12
 							scene12(con);
 						}
 						
+					//Taser
 					}else{
-						//Taser
 						//Scene 12
 						scene12(con);
 					}
-					
+				
+				//Not looking closer
 				}else if(strLook.equalsIgnoreCase("no")){
-					//Not looking closer
 					//Scene 10
 					scene10(con);
 				}
-				
+			
+			//No powers 	
 			}else{
-				//No powers
 				//Scene 4
 				scene4(con);
 			}
@@ -404,8 +401,8 @@ public class midtermproject{
 		con.clear();
 		con.setDrawColor(Color.WHITE);
 		con.println("The urge wasn't very strong.");
-		BufferedImage imgScene5Guard = con.loadImage("scene5guard.jpg");
-		con.drawImage(imgScene5Guard, 0, 0);
+		BufferedImage imgGuard = con.loadImage("guard.jpg");
+		con.drawImage(imgGuard, 0, 0);
 		con.repaint();
 		con.sleep(1500);
 		con.clear();
