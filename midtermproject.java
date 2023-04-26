@@ -181,6 +181,8 @@ public class midtermproject{
 							//Strength of punching the wall
 							dblPunch = Math.round((double)(Math.random()*49999.99+50000.00));
 							dblPunch = dblPunch/100;
+							con.println(dblPunch);
+							con.sleep(4000);
 							
 							if(dblPunch <= 749.99){
 								//Guard hears the noise
@@ -211,8 +213,8 @@ public class midtermproject{
 										
 									}else if(strFight.equalsIgnoreCase("yes") && strPower.equalsIgnoreCase("x-ray vision")){
 										//X-ray powers
-										//Scene 19
-										scene19(con);
+										//Scene 20
+										scene20(con);
 									}
 								
 								}else if(charDirection == 'r'){
@@ -462,7 +464,7 @@ public class midtermproject{
 				con.repaint();
 				con.setDrawColor(Color.WHITE);
 				con.println("Let's go to the door");
-				con.sleep(1000);
+				con.sleep(2000);
 				con.clear();
 				BufferedImage imgDoor = con.loadImage("door.png");
 				con.drawImage(imgDoor, 0, 0);
@@ -563,6 +565,33 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		int intNoiseX;
+		int intNoiseY;
+		int intCount;
+		intNoiseX = 50;
+		intNoiseY = 350;
+		for(intCount = 1; intCount <= 10; intCount++){
+			BufferedImage imgScene14 = con.loadImage("scene14.png");
+			con.drawImage(imgScene14, 0, 0);
+			BufferedImage imgNoise = con.loadImage("noise.png");
+			con.drawImage(imgNoise, intNoiseX, intNoiseY);
+			con.repaint();
+			intNoiseY = intNoiseY - 5;
+			if(intNoiseX <= 60){
+				intNoiseX = intNoiseX + 5;
+			}else if(intNoiseX >= 40){
+				intNoiseX = intNoiseX - 5;
+			}
+			con.sleep(250);
+		}
+		BufferedImage imgTunnel = con.loadImage("tunnel.png");
+		con.drawImage(imgTunnel, 0, 0);
+		con.repaint();
+		con.sleep(1000);
+		con.clear();
+		BufferedImage imgPathfork = con.loadImage("pathfork.jpg");
+		con.drawImage(imgPathfork, 0, 0);
+		con.repaint();
 	}
 	public static void scene15(Console con){
 		con.setDrawColor(Color.BLACK);
@@ -590,20 +619,69 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		BufferedImage imgVillain = con.loadImage("villain.png");
+		con.drawImage(imgVillain, 0, 0);
+		con.repaint();
 	}
 	public static void scene18(Console con){
+		int intCount;
+		int intDarkY;
+		intDarkY = 0;
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		con.println("You run away!");
+		BufferedImage imgHall = con.loadImage("hall.png");
+		con.drawImage(imgHall, 0, 0);
+		con.repaint();
+		for(intCount = 0; intCount <= 20; intCount++){
+			con.fillRect(0, 0, 1280, intDarkY);
+			intDarkY = intDarkY + 36;
+			con.repaint();
+			con.sleep(33);
+		}
+		con.clear();
+		con.println("The darkness devours you.");
+		con.sleep(1000);
+		con.clear();
+		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
+		con.drawImage(imgGameOver, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 	public static void scene19(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		
 	}
 	public static void scene20(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		con.println("Look! You can see the core using x-ray vision!");
+		BufferedImage imgScene20 = con.loadImage("scene20.png");
+		con.drawImage(imgScene20, 0, 0);
+		BufferedImage imgCore = con.loadImage("core.png");
+		con.drawImage(imgCore, 300, 400);
+		con.repaint();
+		con.println("Let's hit it!");
+		con.sleep(2000);
+		con.drawImage(imgScene20, 0, 0);
+		BufferedImage imgBrokenCore = con.loadImage("brokencore.png");
+		con.drawImage(imgBrokenCore, 300, 400);
+		con.repaint();
+		con.clear();
+		con.sleep(2000);
+		BufferedImage imgDeadVillain = con.loadImage("deadvillain.png");
+		con.drawImage(imgDeadVillain, 0, 0);
+		con.repaint();
+		con.sleep(1000);
+		BufferedImage imgEscape = con.loadImage("escape.jpg");
+		con.drawImage(imgEscape, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 }
