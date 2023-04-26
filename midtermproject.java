@@ -181,8 +181,6 @@ public class midtermproject{
 							//Strength of punching the wall
 							dblPunch = Math.round((double)(Math.random()*49999.99+50000.00));
 							dblPunch = dblPunch/100;
-							con.println(dblPunch);
-							con.sleep(100);
 							
 							if(dblPunch <= 749.99){
 								//Guard hears the noise
@@ -527,9 +525,39 @@ public class midtermproject{
 		con.closeConsole();
 	}
 	public static void scene13(Console con){
+		int intNoiseX;
+		int intNoiseY;
+		int intCount;
+		intNoiseX = 50;
+		intNoiseY = 350;
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		for(intCount = 1; intCount <= 10; intCount++){
+			BufferedImage imgScene11 = con.loadImage("scene11.png");
+			con.drawImage(imgScene11, 0, 0);
+			BufferedImage imgNoise = con.loadImage("noise.png");
+			con.drawImage(imgNoise, intNoiseX, intNoiseY);
+			con.repaint();
+			intNoiseY = intNoiseY - 5;
+			if(intNoiseX <= 60){
+				intNoiseX = intNoiseX + 5;
+			}else if(intNoiseX >= 40){
+				intNoiseX = intNoiseX - 5;
+			}
+			con.sleep(250);
+		}
+		con.println("A guard heard the noise!");
+		BufferedImage imgScene12 = con.loadImage("scene12.png");
+		con.drawImage(imgScene12, 0, 0);
+		con.repaint();
+		con.sleep(1000);
+		con.clear();
+		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
+		con.drawImage(imgGameOver, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
 	public static void scene14(Console con){
 		con.setDrawColor(Color.BLACK);
