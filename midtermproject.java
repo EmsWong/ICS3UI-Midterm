@@ -1,6 +1,6 @@
 //Escape The Villain's Lair
 //Emily Wong
-//v#8
+//v#10
 
 import arc.*;
 import java.awt.image.BufferedImage;
@@ -181,8 +181,6 @@ public class midtermproject{
 							//Strength of punching the wall
 							dblPunch = Math.round((double)(Math.random()*49999.99+50000.00));
 							dblPunch = dblPunch/100;
-							con.println(dblPunch);
-							con.sleep(4000);
 							
 							if(dblPunch <= 749.99){
 								//Guard hears the noise
@@ -248,6 +246,7 @@ public class midtermproject{
 			}
 		}
 	}
+	//Scene 1
 	public static void scene1(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -256,6 +255,7 @@ public class midtermproject{
 		con.println("You've been trapped in The Shadow Weaver's lair and have to escape!");
 		con.drawImage(imgScene1, 0, 0);
 	}
+	//Scene 2
 	public static void scene2(Console con){
 		int intXGlow;
 		int intYGlow;
@@ -277,7 +277,7 @@ public class midtermproject{
 			BufferedImage imgScene2 = con.loadImage("scene2.png");
 			con.drawImage(imgScene2, 390, 390);
 			con.setDrawColor(Color.WHITE);
-			con.drawString("Look a glowing orb!", 650, 450);
+			con.drawString("Look, a glowing orb!", 650, 450);
 			con.drawString("It has a riddle", 650, 470);
 			
 			con.setDrawColor(new Color(0, 255, 255));
@@ -289,6 +289,7 @@ public class midtermproject{
 			con.repaint();
 		}	
 	}
+	//Scene 3
 	public static void scene3(Console con){
 		int intXGlow;
 		int intYGlow;
@@ -310,7 +311,7 @@ public class midtermproject{
 			BufferedImage imgScene3 = con.loadImage("scene3.png");
 			con.drawImage(imgScene3, 390, 390);
 			con.setDrawColor(Color.WHITE);
-			con.drawString("Look a glowing orb!", 650, 450);
+			con.drawString("Look, a glowing orb!", 650, 450);
 			con.drawString("It has a riddle", 650, 470);
 			
 			con.setDrawColor(new Color(0, 0, 205));
@@ -322,6 +323,7 @@ public class midtermproject{
 			con.repaint();
 		}	
 	}
+	//Scene 4
 	public static void scene4(Console con){
 		int intCount;
 		for(intCount = 3; intCount >= 0; intCount--){
@@ -336,7 +338,7 @@ public class midtermproject{
 			con.setDrawColor(Color.WHITE);
 			con.drawString("Oh no!", 450, 355);
 			con.drawString("There's a self destruct timer!", 335, 375);
-			con.setDrawColor(Color.BLACK);
+			con.setDrawColor(Color.BLUE);
 			con.drawString("0:0"+intCount, 465, 470);
 			con.sleep(500);
 		}
@@ -347,9 +349,10 @@ public class midtermproject{
 		BufferedImage imgGameOver = con.loadImage("gameover.jpg");
 		con.drawImage(imgGameOver, 0, 0);
 		con.repaint();
-		con.sleep(1000);
+		con.sleep(3000);
 		con.closeConsole();
-	}	
+	}
+	//Scene 5	
 	public static void scene5(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -372,6 +375,7 @@ public class midtermproject{
 		con.drawImage(imgKey, 530, 370);
 		con.repaint();
 	}
+	//Scene 6
 	public static void scene6(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -393,6 +397,7 @@ public class midtermproject{
 		BufferedImage imgBlurpuzzle = con.loadImage("blurpuzzle.png");
 		con.drawImage(imgBlurpuzzle, 480, 200);
 	}
+	//Scene 7
 	public static void scene7(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -420,6 +425,7 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 8
 	public static void scene8(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -430,6 +436,7 @@ public class midtermproject{
 		con.drawImage(imgPuzzle, 400, 50);
 		con.repaint();
 	}
+	//Scene 9
 	public static void scene9(Console con){
 		int intCount;
 		int intKeyX;
@@ -473,6 +480,7 @@ public class midtermproject{
 			}
 		}
 	}
+	//Scene 10
 	public static void scene10(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -493,6 +501,7 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 11
 	public static void scene11(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -501,6 +510,7 @@ public class midtermproject{
 		con.drawImage(imgScene11, 0, 0);
 		con.repaint();
 	}
+	//Scene 12
 	public static void scene12(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -511,7 +521,7 @@ public class midtermproject{
 		con.println("Can't seem to open the door...");
 		con.sleep(2000);
 		con.clear();
-		con.println("Oh no! A guard found us!");
+		con.println("Oh no! A guard found you!");
 		BufferedImage imgScene12 = con.loadImage("scene12.png");
 		con.drawImage(imgScene12, 0, 0);
 		con.repaint();
@@ -526,6 +536,7 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 13
 	public static void scene13(Console con){
 		int intNoiseX;
 		int intNoiseY;
@@ -561,6 +572,7 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 14
 	public static void scene14(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -593,6 +605,7 @@ public class midtermproject{
 		con.drawImage(imgPathfork, 0, 0);
 		con.repaint();
 	}
+	//Scene 15
 	public static void scene15(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -601,6 +614,7 @@ public class midtermproject{
 		con.drawImage(imgPathfork, 0, 0);
 		con.repaint();
 	}
+	//Scene 16
 	public static void scene16(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -615,6 +629,7 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 17
 	public static void scene17(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
@@ -623,6 +638,7 @@ public class midtermproject{
 		con.drawImage(imgVillain, 0, 0);
 		con.repaint();
 	}
+	//Scene 18
 	public static void scene18(Console con){
 		int intCount;
 		int intDarkY;
@@ -650,12 +666,54 @@ public class midtermproject{
 		con.sleep(3000);
 		con.closeConsole();
 	}
+	//Scene 19
 	public static void scene19(Console con){
+		int intCount;
+		int intCount2;
+		int intRockX;
+		int intRockX2;
+		int intRockY;
+		int intRockY2;
+		intRockX = 50;
+		intRockY = 470;
+		intRockX2 = 570;
+		intRockY2 = 370;
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
-		
+		con.println("Look, a rock behind you! Grab it!");
+		for(intCount = 1; intCount <= 20; intCount++){
+			BufferedImage imgPathfork = con.loadImage("pathfork.jpg");
+			con.drawImage(imgPathfork, 0, 0);
+			BufferedImage imgRock = con.loadImage("rock.png");
+			con.drawImage(imgRock, intRockX, intRockY);
+			con.repaint();
+			intRockX = intRockX + 26;
+			intRockY = intRockY - 5;
+			con.sleep(33);
+		}
+		con.clear();
+		for(intCount2 = 1; intCount2 <= 10; intCount2++){
+			BufferedImage imgVillain = con.loadImage("villain.png");
+			con.drawImage(imgVillain, 0, 0);
+			BufferedImage imgRock = con.loadImage("rock.png");
+			con.drawImage(imgRock, intRockX2, intRockY2);
+			con.repaint();
+			intRockX2 = intRockX2 - 2;
+			intRockY2 = intRockY2 + 5;
+			con.sleep(33);
+		}
+		BufferedImage imgDiedVillain = con.loadImage("diedvillain.png");
+		con.drawImage(imgDiedVillain, 0, 0);
+		con.repaint();
+		con.sleep(2000);
+		BufferedImage imgEscape = con.loadImage("escape.jpg");
+		con.drawImage(imgEscape, 0, 0);
+		con.repaint();
+		con.sleep(3000);
+		con.closeConsole();
 	}
+	//Scene 20
 	public static void scene20(Console con){
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
