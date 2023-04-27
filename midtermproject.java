@@ -69,7 +69,8 @@ public class midtermproject{
 					if(intUrge >= 51){
 						//Scene 9
 						scene9(con);
-						con.println("Another door... Enter 3 numbers for a triangle check");
+						con.println("Another door..."); 
+						con.println("Enter 3 numbers for a triangle check");
 						con.println("Number 1:");
 						dblsideA = con.readDouble();
 						con.println("Number 2:");
@@ -444,6 +445,7 @@ public class midtermproject{
 		con.setDrawColor(Color.BLACK);
 		con.fillRect(0, 0, 1280, 720);
 		con.clear();
+		con.println("You pulled the key off the guard!"); 
 		while(intCount == 1){
 			BufferedImage imgGuard = con.loadImage("guard.jpg");
 			con.drawImage(imgGuard, 0, 0);
@@ -456,6 +458,7 @@ public class midtermproject{
 			if(intKeyY == 570){
 				con.setDrawColor(Color.BLACK);
 				con.fillRect(0, 0, 1280, 720);
+				con.clear();
 				BufferedImage imgUnlock = con.loadImage("scene1.jpg");
 				con.drawImage(imgUnlock, 0, 0);
 				con.drawImage(imgKey, 530, 570);
